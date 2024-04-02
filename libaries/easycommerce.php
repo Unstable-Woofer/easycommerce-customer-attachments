@@ -10,12 +10,12 @@ define('EZYC_VERSION_PHP', '8.1');
 define('EZYC_VERSION_WP', '6.0');
 
 class EasyCommerce_Core {
-    const SLUT = 'easycommerce';
+    const SLUG = 'easycommerce';
     private static $instance = null;
 
     private function __construct() {
         if (is_admin()) :
-            $active_plugins = apply_filters('active_plugins', get_option('active_plugins'));
+            $plugins_active = apply_filters('active_plugins', get_option('active_plugins'));
 
             foreach($plugins_active as $plugin) :
                 if (Strpos($plugin, 'easycommerce-') !== false) :
